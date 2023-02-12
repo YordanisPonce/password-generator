@@ -2,3 +2,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+$primaryColor :#0E0D13;
+
+body {
+    background: linear-gradient(#24232B, $primaryColor 22%);
+    height    : 100vh;
+    overflow: hidden;
+}

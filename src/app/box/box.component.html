@@ -1,0 +1,59 @@
+<main class="bg-secondary px-5 py-3">
+    <div class="flex justify-between items-center mb-2">
+        <p class="mb-0 text-gray text-sm">
+            Character length
+        </p>
+        <p class="text-2xl text-info mb-0">
+            {{request.range}}
+        </p>
+    </div>
+    <input type="range" name="range" id="" class="w-full my-2" [(ngModel)]="request.range" max="20" min="4">
+    <div class="w-full flex flex-col my-3">
+        <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
+            <input type="checkbox" class="hidden" name="uppercase" [(ngModel)]="request.uppercaseLetter">
+            <span class="checkmark relative"></span>
+            <span class="ml-4 text-white capitalize">Include Upercase letters</span>
+        </label>
+        <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
+            <input type="checkbox" class="hidden" name="lowercase" [(ngModel)]="request.lowercaseLetter">
+            <span class="checkmark relative"></span>
+            <span class="ml-4 text-white capitalize">Include lowercase letters</span>
+        </label>
+        <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
+            <input type="checkbox" class="hidden" name="numbers" [(ngModel)]="request.numbers">
+            <span class="checkmark relative"></span>
+            <span class="ml-4 text-white capitalize">Include numbers</span>
+        </label>
+        <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
+            <input type="checkbox" class="hidden" name="symbols" [(ngModel)]="request.symbols">
+            <span class="checkmark relative"></span>
+            <span class="ml-4 text-white capitalize">Include symbols</span>
+        </label>
+    </div>
+    <div class="bg-strength  px-3 py-5 my-3 text-secondary uppercase flex items-center justify-between"
+        style="height: 49px;">
+        <p class="mb-0 text-xs">Strength</p>
+        <div class="grid grid-cols-4 gap-2">
+            <div class="box px-1 py-3"></div>
+            <div class="box px-1 py-3"></div>
+            <div class="box px-1 py-3"></div>
+            <div class="box px-1 py-3"></div>
+        </div>
+    </div>
+    <button class="bg-info px-4 my-3 font-medium w-full mat-button h-btn" (click)="getPassword()" [disabled]="loading">
+        <span class="flex items-center justify-center leading-3" *ngIf="!loading; else icon">
+            <span class="mr-3 leading-3 uppercase text-sm"> Generate</span>
+            <img src="/assets/images/right-arrow-svgrepo-com (2).svg" alt="" width="13" height="13" class="ml-3">
+        </span>
+        <ng-template #icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                style="margin: auto; display: block; shape-rendering: auto;" class="p-0" width="35px" height="35px"
+                viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="currentColor" stroke="none">
+                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite"
+                        keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform>
+                </path>
+            </svg>
+        </ng-template>
+    </button>
+</main>

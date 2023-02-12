@@ -1,0 +1,22 @@
+//Global variables
+$primaryColor  :#0E0D13;
+$textColor     :#827F92;
+$colorSecondary:#24232B;
+$colorInfo     :#A4FFAF;
+$gray          :#D4D3DB;
+$bgStrength    :#18171F;
+$generatedPass : #56555E;
+
+//Box component variables
+
+$trackHeigth :0.5rem;
+$slider-thumb:1.5rem;
+$checkboxSize:15px;
+
+//btns
+
+$btnHeigth:48px;
+
+@mixin bg_Strength {
+    background-color: $bgStrength;
+}

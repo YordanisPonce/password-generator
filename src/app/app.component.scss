@@ -1,0 +1,57 @@
+@import "scss/mixins.scss";
+
+.bg-secondary {
+    background-color: $colorSecondary;
+}
+
+.bg-strength {
+    @include bg_Strength;
+}
+
+.bg-primary {
+    background-color: $primaryColor;
+}
+
+.bg-info {
+    background-color: $colorInfo;
+}
+
+.text-secondary {
+    color: $textColor;
+}
+
+.text-info {
+    color: $colorInfo;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-generated-pass {
+    color: $generatedPass;
+}
+
+/* Ripple effect */
+.mat-button {
+    background-position: center;
+    transition         : background 0.8s;
+}
+
+.mat-button:hover {
+    background: #a4ffafbd radial-gradient(circle, transparent 1%, #a4ffafbd 1%) center/15000%;
+}
+
+.mat-button:active {
+    background-color: #a4ffafbd;
+    background-size : 100%;
+    transition      : background 0s;
+}
+
+.title {
+    font-size: 19px !important;
+}
+.d-none{
+  transition: transform .14s ease-in-out,
+              display 0s .2s ease;
+}

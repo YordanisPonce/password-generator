@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'practice';
+  title = 'password generator';
+  show: boolean = false
+
+  hideToast() {
+    this.show = true;
+  }
 }
