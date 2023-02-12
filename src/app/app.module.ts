@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ElementRef, NgModule, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,4 +25,6 @@ import { ToastComponent } from './toast/toast.component'
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ 
+}

@@ -5,7 +5,10 @@
 $primaryColor :#0E0D13;
 
 body {
-    background: linear-gradient(#24232B, $primaryColor 22%);
+    background-image: linear-gradient(#24232B, $primaryColor 22%);
+    background-attachment: fixed;
+    background-size: cover;
     height    : 100vh;
-    overflow: hidden;
+    overflow  : auto;
+    z-index   : 2;
 }

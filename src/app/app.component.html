@@ -1,10 +1,16 @@
-<div class="h-full flex items-center justify-center flex-col md:mx-0 relative" style="transform: scale(.85,.80);">
+<div class="flex items-center justify-center flex-col md:mx-0 relative h-full" style="transform: scale(.85,.80);">
     <p class="capitalize mb-5 text-secondary font-medium title"> {{title}}</p>
     <app-display class="w-full md:w-1/3 lg:w-96 mb-3 "></app-display>
-    <app-box class="w-full md:w-1/3 lg:w-96 "></app-box>
-
+    <app-box class="w-full md:w-1/3 lg:w-96 " (notifyChange)="showToast($event)"></app-box>
 </div>
-<app-toast class="absolute top-0 right-0  rounded z-10 shadow w-fit mt-4 z-10 transition"
-    [ngClass]="{'translate-x-full': show}">
+<app-toast class="fixed mb-8 top-0 right-0  rounded  shadow w-fit mt-4 z-50 transition-all duration-100 cursor-pointer"
+    (click)="hideToast()"
+    [ngClass]="{'translate-x-full': hide, '-translate-x-5': !hide, 'bg-info text-generated-pass':!notification.error,'bg-red-500 text-white':notification.error}"
+    style="z-index: 1;" [text]="notification.message" [errorMessage]="notification.error">
     <span class="leading-3  opacity-80 hover:opacity-100 cursor-pointer" (click)="hideToast()">&times;</span>
+    <div progressBar class="w-full h-2 bg-white my-3 rounded border-2 border-solid border-inherit">
+        <div class="h-full rounded recort-width"
+            [ngClass]="{'w-0': !hide, 'w-full':hide, 'bg-red-500':notification.error, 'bg-generated-pass':!notification.error}">
+        </div>
+    </div>
 </app-toast>

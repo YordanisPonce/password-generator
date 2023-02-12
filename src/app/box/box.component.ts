@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Notification } from '../interfaces/NotificationInterface';
 import { Password } from '../interfaces/Password';
 import { RequestPassword } from '../interfaces/RequestPassword';
 import { GeneratePasswordService } from '../services/generate-password.service';
@@ -18,16 +19,20 @@ export class BoxComponent {
     numbers: false,
     symbols: false
   }
-  options = ['Upercase letters', 'lowercase letters', 'numbers', 'symbols'];
   loading: boolean = false;
+  @Output() notifyChange = new EventEmitter<Notification>(undefined);
+  notify: Notification | undefined
+
+
   constructor(private get_password: GeneratePasswordService) { }
 
   getPassword() {
     const onError = (resp: HttpErrorResponse) => {
-      alert(resp.statusText);
+      this.notify = { error: true, message: resp.statusText };
     }
-    const onSubscribe = (response: Password) => {
-      this.get_password.sharePassword(response.random_password);
+    const onSubscribe = (resp: Password) => {
+      this.get_password.sharePassword(resp.random_password);
+      this.notify = { error: false, message: 'Password generated' };
     }
     this.setLoading(true)
     this.get_password.getPassword(this.request)
@@ -38,9 +43,8 @@ export class BoxComponent {
         }
       ).add(() => {
         this.setLoading(false)
+        this.notifyChange.emit(this.notify);
       });
-    console.log(this.request);
-
   }
 
   setLoading(value: boolean) {

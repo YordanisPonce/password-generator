@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Notification } from '../interfaces/NotificationInterface';
 import { GeneratePasswordService } from '../services/generate-password.service';
 
 @Component({
@@ -15,14 +16,17 @@ export class DisplayComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.generatePassword.passwordResult$.subscribe(psw => { this.password = psw });
+    this.generatePassword.passwordResult$.subscribe(psw => {
+      this.password = psw
+    });
   }
 
 
 
   copyToclipBoard() {
-    navigator.clipboard.writeText(this.passwordInput?.nativeElement.value);
-    this.tooltipText = "Copied!";
+    navigator.clipboard.writeText(this.passwordInput?.nativeElement.value).then(resp => { this.tooltipText = "Copied!"; }
+    ).catch(resp => { this.tooltipText = "Error"; });
+
   }
 
   replace() {

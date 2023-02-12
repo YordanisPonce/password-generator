@@ -16,6 +16,11 @@
     background-color: $colorInfo;
 }
 
+.bg-info-alpha {
+    background-color: #a4ffafbd;
+    ;
+}
+
 .text-secondary {
     color: $textColor;
 }
@@ -26,6 +31,10 @@
 
 .text-gray {
     color: $gray;
+}
+
+.bg-generated-pass {
+    background-color: $generatedPass;
 }
 
 .text-generated-pass {
@@ -51,7 +60,7 @@
 .title {
     font-size: 19px !important;
 }
-.d-none{
-  transition: transform .14s ease-in-out,
-              display 0s .2s ease;
+
+.recort-width {
+    transition: width 1.5s ease-in-out;
 }
