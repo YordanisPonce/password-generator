@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Notification } from '../interfaces/NotificationInterface';
 import { GeneratePasswordService } from '../services/generate-password.service';
 
@@ -9,13 +10,13 @@ import { GeneratePasswordService } from '../services/generate-password.service';
 })
 export class DisplayComponent implements OnInit {
   password: string = '';
-  tooltipText = "Copy to clipboard!";
+  tooltipText: string | undefined;
   @ViewChild('passwordInput') passwordInput: ElementRef | undefined;
 
-  constructor(private generatePassword: GeneratePasswordService) {
-
+  constructor(private generatePassword: GeneratePasswordService, private transLateService: TranslateService) {
   }
   ngOnInit(): void {
+
     this.generatePassword.passwordResult$.subscribe(psw => {
       this.password = psw
     });
@@ -24,14 +25,18 @@ export class DisplayComponent implements OnInit {
 
 
   copyToclipBoard() {
-    navigator.clipboard.writeText(this.passwordInput?.nativeElement.value).then(resp => { this.tooltipText = "Copied!"; }
+    navigator.clipboard.writeText(this.passwordInput?.nativeElement.value).then(resp => { this.setTextClipboard('display.textCopied'); }
     ).catch(resp => { this.tooltipText = "Error"; });
 
   }
 
   replace() {
     setTimeout(() => {
-      this.tooltipText = "Copy to clipboard!";
+      this.setTextClipboard('display.cliboardCopy');
     }, 201);
+  }
+
+  setTextClipboard(text: string) {
+    this.tooltipText = this.transLateService.instant(text);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Notification } from './interfaces/NotificationInterface';
 
 @Component({
@@ -6,15 +7,18 @@ import { Notification } from './interfaces/NotificationInterface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnChanges {
+export class AppComponent implements OnInit {
 
   title = 'password generator';
   hide: boolean = true
   notification: Notification = { error: false, message: '' }
 
-  constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
+  constructor(private translate: TranslateService) {
 
+  }
+  ngOnInit(): void {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 
 

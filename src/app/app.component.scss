@@ -18,7 +18,6 @@
 
 .bg-info-alpha {
     background-color: #a4ffafbd;
-    ;
 }
 
 .text-secondary {
@@ -39,22 +38,6 @@
 
 .text-generated-pass {
     color: $generatedPass;
-}
-
-/* Ripple effect */
-.mat-button {
-    background-position: center;
-    transition         : background 0.8s;
-}
-
-.mat-button:hover {
-    background: #a4ffafbd radial-gradient(circle, transparent 1%, #a4ffafbd 1%) center/15000%;
-}
-
-.mat-button:active {
-    background-color: #a4ffafbd;
-    background-size : 100%;
-    transition      : background 0s;
 }
 
 .title {

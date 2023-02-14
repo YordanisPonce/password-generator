@@ -1,12 +1,18 @@
 @import "../app.component.scss";
 
-
 input[type="range"] {
     -webkit-appearance: none;
-    appearance        : none;
-    background        : transparent;
-    cursor            : pointer;
-    width             : 100%;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+
+    /* IE*/
+    &::-ms-fill-lower {
+        background-color: #43e5f7;
+    }
+    &::-ms-fill-upper {
+        background-color: #9a905d;
+    }
 }
 
 /***** Track Styles *****/
@@ -27,94 +33,112 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     /* Override default look */
-    appearance        : none;
-    margin-top        : calc(0.5rem/2) - calc(1.5rem/2);
+    appearance: none;
+    margin-top: calc(0.5rem / 2) - calc(1.5rem / 2);
     /* Centers thumb on the track */
-    background-color  : white;
-    height            : $slider-thumb;
-    width             : 1.5rem;
-    border-radius     : 50%;
+    background-color: white;
+    height: $slider-thumb;
+    width: 1.5rem;
+    border-radius: 50%;
+    border-width: 1.79px;
+    @apply transition-all ease-in-out duration-200 border-solid;
+    border-color: transparent;
+    &:hover {
+        background-color: $primaryColor;
+        border-color: $colorInfo;
+    }
 }
 
 /***** Thumb Styles *****/
 /***** Firefox *****/
 input[type="range"]::-moz-range-thumb {
-    border          : none;
+    border: none;
     /*Removes extra border that FF applies*/
-    border-radius   : 50%;
+    border-radius: 50%;
     /*Removes default border-radius that FF applies*/
     background-color: white;
-    height          : $slider-thumb;
-    width           : 2rem;
+    height: $slider-thumb;
+    width: 2rem;
+    cursor: ew-resize;
 }
-
-
 
 /* Customize the label (the container) */
 .container {
     -webkit-user-select: none;
-    -moz-user-select   : none;
-    -ms-user-select    : none;
-    user-select        : none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:active {
         background-color: transparent;
     }
 }
 
-
 /* Create a custom checkbox */
 .checkmark {
-    height          : 14px;
-    width           : 14px;
-    left            : 0;
-    border          : 1.7px solid white;
+    height: 14px;
+    width: 14px;
+    left: 0;
+    border: 1.7px solid #a4ffaf8f;
     background-color: transparent;
-    padding         : .3em;
+    padding: 0.3em;
+    transition: all 0.2s ease-in-out;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
+.container:hover input ~ .checkmark {
     background-color: transparent;
-   /*  border          : 2px solid white; */
+    /*  border          : 2px solid white; */
 }
 
 /* When the checkbox is checked, add a info background */
-.container input:checked~.checkmark {
+.container input:checked ~ .checkmark {
     background-color: $colorInfo;
-    border-color    : transparent;
+    border-color: transparent;
+}
+
+.container input:hover ~ .checkmark {
+    border: 1.7px solid #a4ffaf;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-    content : "";
+    content: "";
     position: absolute;
-    display : none;
+    display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
+.container input:checked ~ .checkmark:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-    left             : 3px;
-    bottom           : 1px;
-    width            : 6px;
-    height           : 12px;
-    border           : solid $colorSecondary;
-    border-width     : 0 3px 3px 0;
+    left: 3px;
+    bottom: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid $colorSecondary;
+    border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
-    -ms-transform    : rotate(45deg);
-    transform        : rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .box {
-
-    border: 2px solid white
+    border: 2px solid white;
 }
 
 .h-btn {
     height: $btnHeigth;
+}
+
+.btn-outline {
+    @apply border-2 border-solid transition-all duration-300 ease-in-out;
+    border-color: $colorInfo;
+    &:hover {
+        background-color: transparent;
+        color: $colorInfo;
+    }
 }

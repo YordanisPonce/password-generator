@@ -1,11 +1,12 @@
 <div class="flex justify-between items-center px-5 py-4 my-1 bg-secondary text-secondary font-medium">
-    <input class="grow mb-0 text-generated-pass text-2xl bg-transparent outline-0" readonly value="{{password}}" #passwordInput>
+    <input class="grow mb-0 text-generated-pass text-2xl bg-transparent outline-0" readonly value="{{password}}"
+        #passwordInput>
     <div class="group relative justify-center flex">
-       <button class="rounded  text-sm text-white shadow-sm" (click)="copyToclipBoard()" (mouseout)="replace()"> 
+        <button class="rounded  text-sm text-white shadow-sm" (click)="copyToclipBoard()" (mouseout)="replace()">
             <img src="/assets/images/icons.png" alt="" width="18px" height="18px">
         </button>
         <span
             class="absolute bottom-5 rigth-5 md:rigth-0 scale-0 rounded bg-gray-800 text-xs text-white group-hover:scale-100 transition-all flex duration-200 p-1"
-            style="white-space: nowrap !important;">{{tooltipText}}</span>
+            style="white-space: nowrap !important;">{{ tooltipText || 'display.cliboardCopy' | translate}}!!</span>
     </div>
 </div>

@@ -1,38 +1,38 @@
 <main class="bg-secondary px-5 py-3">
     <div class="flex justify-between items-center mb-2">
         <p class="mb-0 text-gray text-sm">
-            Character length
+            {{ 'box.box-title' | translate }}
         </p>
         <p class="text-2xl text-info mb-0">
             {{request.range}}
         </p>
     </div>
-    <input type="range" name="range" id="" class="w-full my-2" [(ngModel)]="request.range" max="20" min="4">
+    <input type="range" name="range" id="" class="w-full my-2"  step="0" [(ngModel)]="request.range" max="20" min="4">
     <div class="w-full flex flex-col my-3">
         <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
             <input type="checkbox" class="hidden" name="uppercase" [(ngModel)]="request.uppercaseLetter">
             <span class="checkmark relative"></span>
-            <span class="ml-4 text-white capitalize">Include Upercase letters</span>
+            <span class="ml-4 text-white capitalize">{{ 'box.uppercase' | translate }}</span>
         </label>
         <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
             <input type="checkbox" class="hidden" name="lowercase" [(ngModel)]="request.lowercaseLetter">
             <span class="checkmark relative"></span>
-            <span class="ml-4 text-white capitalize">Include lowercase letters</span>
+            <span class="ml-4 text-white capitalize">{{ 'box.lowercase' | translate }} </span>
         </label>
         <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
             <input type="checkbox" class="hidden" name="numbers" [(ngModel)]="request.numbers">
             <span class="checkmark relative"></span>
-            <span class="ml-4 text-white capitalize">Include numbers</span>
+            <span class="ml-4 text-white capitalize">{{ 'box.numbers' | translate }}</span>
         </label>
         <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
             <input type="checkbox" class="hidden" name="symbols" [(ngModel)]="request.symbols">
             <span class="checkmark relative"></span>
-            <span class="ml-4 text-white capitalize">Include symbols</span>
+            <span class="ml-4 text-white capitalize">{{ 'box.symbols' | translate }}</span>
         </label>
     </div>
     <div class="bg-strength  px-3 py-5 my-3 text-secondary uppercase flex items-center justify-between"
         style="height: 49px;">
-        <p class="mb-0 text-xs">Strength</p>
+        <p class="mb-0 text-xs"> {{ 'box.strength' | translate }}</p>
         <div class="grid grid-cols-4 gap-2">
             <div class="box px-1 py-3"></div>
             <div class="box px-1 py-3"></div>
@@ -40,14 +40,23 @@
             <div class="box px-1 py-3"></div>
         </div>
     </div>
-    <button class="bg-info px-4 my-3 font-medium w-full mat-button h-btn" (click)="getPassword()" [disabled]="loading">
+    <button class="bg-info px-4 my-3 font-medium w-full mat-button h-btn btn-outline font-bold" (click)="getPassword()"
+        [disabled]="loading">
         <span class="flex items-center justify-center leading-3" *ngIf="!loading; else icon">
-            <span class="mr-3 leading-3 uppercase text-sm"> Generate</span>
-            <img src="/assets/images/right-arrow-svgrepo-com (2).svg" alt="" width="13" height="13" class="ml-3">
+            <span class="mr-4 leading-3 uppercase text-sm">{{ 'box.generate' | translate }} </span>
+            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" enable-background="new 0 0 32 32"
+                xml:space="preserve">
+                <line fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" x1="26" y1="16" x2="4"
+                    y2="16" />
+                <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"
+                    points="18,7.5 26.5,16 18,24.5 " />
+            </svg>
         </span>
         <ng-template #icon>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                style="margin: auto; display: block; shape-rendering: auto;" class="p-0" width="35px" height="35px"
+                style="margin: auto; display: block; shape-rendering: auto;" class="p-0" width="32px" height="32px"
                 viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                 <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="currentColor" stroke="none">
                     <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite"

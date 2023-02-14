@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center flex-col md:mx-0 relative h-full" style="transform: scale(.85,.80);">
-    <p class="capitalize mb-5 text-secondary font-medium title"> {{title}}</p>
+    <p class="capitalize mb-5 w-ful text-secondary font-medium title flex justify-between"><span class="leading-3">{{ 'display.title' | translate }}</span></p>
     <app-display class="w-full md:w-1/3 lg:w-96 mb-3 "></app-display>
     <app-box class="w-full md:w-1/3 lg:w-96 " (notifyChange)="showToast($event)"></app-box>
 </div>

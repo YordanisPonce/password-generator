@@ -1,0 +1,20 @@
+{
+    "display": {
+        "title": "Password generator",
+        "cliboardCopy": "Copy to clipboard",
+        "textCopied": "Copied"
+    },
+    "box": {
+        "box-title": "Character length",
+        "uppercase": "Include uppercase letters",
+        "lowercase": "Include lowercase letters",
+        "numbers": "Include numbers",
+        "symbols": "Include symbols",
+        "strength": "Strength",
+        "generate": "Generate"
+    },
+    "toast": {
+        "success": "Operation completed",
+        "error": "Unknow error"
+    }
+}
