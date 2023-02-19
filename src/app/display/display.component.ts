@@ -9,14 +9,13 @@ import { GeneratePasswordService } from '../services/generate-password.service';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
-  password: string = '';
+  password: string | undefined;
   tooltipText: string | undefined;
   @ViewChild('passwordInput') passwordInput: ElementRef | undefined;
 
   constructor(private generatePassword: GeneratePasswordService, private transLateService: TranslateService) {
   }
   ngOnInit(): void {
-
     this.generatePassword.passwordResult$.subscribe(psw => {
       this.password = psw
     });
