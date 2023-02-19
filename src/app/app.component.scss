@@ -47,3 +47,17 @@
 .recort-width {
     transition: width 1.5s ease-in-out;
 }
+
+.ribbon {
+    @extend .text-generated-pass;
+    position: fixed;
+    background: $colorInfo;
+    box-shadow: 0 0 0 999px $colorInfo;
+    clip-path: inset(0 -100%);
+    z-index: -1;
+  }
+  .left-translate {
+    inset: 0 auto auto 0; /* top and left equal to 0 */
+    transform-origin: 100% 0; /* OR top right */
+    transform: translate(-29.3%) rotate(-45deg);
+  }

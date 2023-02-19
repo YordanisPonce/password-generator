@@ -12,13 +12,14 @@ export class AppComponent implements OnInit {
   title = 'password generator';
   hide: boolean = true
   notification: Notification = { error: false, message: '' }
-
+  locale: string | undefined
   constructor(private translate: TranslateService) {
 
   }
   ngOnInit(): void {
     this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.locale = localStorage.getItem('locale') || 'en';
+    this.translate.use(this.locale);
   }
 
 
@@ -35,5 +36,10 @@ export class AppComponent implements OnInit {
 
   hideToast() {
     this.hide = true;
+  }
+  setLocale() {
+    this.locale = this.locale == 'es' ? 'en' : 'es';
+    this.translate.use(this.locale);
+    localStorage.setItem('locale', this.locale);
   }
 }

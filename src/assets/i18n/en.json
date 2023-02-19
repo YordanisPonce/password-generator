@@ -2,7 +2,8 @@
     "display": {
         "title": "Password generator",
         "cliboardCopy": "Copy to clipboard",
-        "textCopied": "Copied"
+        "textCopied": "Copied",
+        "password":"Password"
     },
     "box": {
         "box-title": "Character length",

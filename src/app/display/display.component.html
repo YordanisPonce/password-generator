@@ -1,6 +1,6 @@
 <div class="flex justify-between items-center px-5 py-4 my-1 bg-secondary text-secondary font-medium">
-    <input class="grow mb-0 text-generated-pass text-2xl bg-transparent outline-0" readonly value="{{password}}"
-        #passwordInput>
+    <input class="grow mb-0 text-generated-pass text-2xl bg-transparent outline-0" readonly
+        [value]="password || ('display.password' | translate)" #passwordInput>
     <div class="group relative justify-center flex">
         <button class="rounded  text-sm text-white shadow-sm" (click)="copyToclipBoard()" (mouseout)="replace()">
             <img src="assets/images/icons.png" alt="" width="18px" height="18px">

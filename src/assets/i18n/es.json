@@ -2,7 +2,8 @@
     "display": {
         "title": "Generador de contraseñas",
         "cliboardCopy": "Copiar al portapapeles",
-        "textCopied": "Copiado"
+        "textCopied": "Copiado",
+        "password":"Contraseña"
     },
     "box": {
         "box-title": "Cantidad de caracteres",
