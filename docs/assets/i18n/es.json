@@ -1,0 +1,20 @@
+{
+    "display": {
+        "title": "Generador de contraseñas",
+        "cliboardCopy": "Copiar al portapapeles",
+        "textCopied": "Copiado"
+    },
+    "box": {
+        "box-title": "Cantidad de caracteres",
+        "uppercase": "Incluye letras mayúsculas",
+        "lowercase": "Incluye letras minúsculas",
+        "numbers": "Incluye números",
+        "symbols": "Incluye símbolos",
+        "strength": "Fortaleza",
+        "generate": "Generar"
+    },
+    "toast": {
+        "success": "Operación completada",
+        "error": "Ha ocurrido un fallo"
+    }
+}
