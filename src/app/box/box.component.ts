@@ -14,7 +14,7 @@ import { GeneratePasswordService } from '../services/generate-password.service';
 })
 export class BoxComponent {
   request: RequestPassword = {
-    range: 4,
+    range: 0,
     uppercaseLetter: false,
     lowercaseLetter: false,
     numbers: false,
