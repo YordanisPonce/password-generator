@@ -7,7 +7,8 @@
             {{request.range}}
         </p>
     </div>
-    <input type="range" name="range" id="" class="w-full my-2"  step="0" [(ngModel)]="request.range" max="20" min="4">
+    <input type="range" name="range" id="" class="w-full my-2" step="0" [(ngModel)]="request.range" max="20" min="4"
+        (input)="setStrength()">
     <div class="w-full flex flex-col my-3">
         <label class="container flex relative items-center cursor-pointer ml-0 w-fit my-2">
             <input type="checkbox" class="hidden" name="uppercase" [(ngModel)]="request.uppercaseLetter">
@@ -33,11 +34,11 @@
     <div class="bg-strength  px-3 py-5 my-3 text-secondary uppercase flex items-center justify-between"
         style="height: 49px;">
         <p class="mb-0 text-xs"> {{ 'box.strength' | translate }}</p>
-        <div class="grid grid-cols-4 gap-2">
-            <div class="box px-1 py-3"></div>
-            <div class="box px-1 py-3"></div>
-            <div class="box px-1 py-3"></div>
-            <div class="box px-1 py-3"></div>
+        <div class="grid grid-cols-4 gap-2 cursor-pointer" #strengthSelected>
+            <div class="box  bg-strength-selected border-transparent"></div>
+            <div class="box border-white"></div>
+            <div class="box border-white"></div>
+            <div class="box border-white"></div>
         </div>
     </div>
     <button class="bg-info px-4 my-3 font-medium w-full mat-button h-btn btn-outline font-bold" (click)="getPassword()"

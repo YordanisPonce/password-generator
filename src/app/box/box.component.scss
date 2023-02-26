@@ -127,7 +127,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .box {
-    border: 2px solid white;
+    @apply border-2 border-solid px-1 py-3 transition-colors duration-150 ease-out;
 }
 
 .h-btn {
