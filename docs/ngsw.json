@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676949348936,
+  "timestamp": 1677443848144,
   "index": "/password-generator/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/password-generator/favicon.ico",
         "/password-generator/index.html",
-        "/password-generator/main.9ec3ab124aa3ddff.js",
+        "/password-generator/main.d77f72e01bfb8c84.js",
         "/password-generator/manifest.webmanifest",
         "/password-generator/polyfills.d4e8a511f0735905.js",
         "/password-generator/runtime.655e0ec6227aa74f.js",
-        "/password-generator/styles.983c6acf02800636.css"
+        "/password-generator/styles.00f13326c31a8f8a.css"
       ],
       "patterns": []
     },
@@ -31,6 +31,14 @@
       "urls": [
         "/password-generator/assets/i18n/en.json",
         "/password-generator/assets/i18n/es.json",
+        "/password-generator/assets/icons/icon-128x128.png",
+        "/password-generator/assets/icons/icon-144x144.png",
+        "/password-generator/assets/icons/icon-152x152.png",
+        "/password-generator/assets/icons/icon-192x192.png",
+        "/password-generator/assets/icons/icon-384x384.png",
+        "/password-generator/assets/icons/icon-512x512.png",
+        "/password-generator/assets/icons/icon-72x72.png",
+        "/password-generator/assets/icons/icon-96x96.png",
         "/password-generator/assets/icons/icon.svg",
         "/password-generator/assets/images/Eclipse-1s-200px.svg",
         "/password-generator/assets/images/error-icon.svg",
@@ -46,6 +54,14 @@
   "hashTable": {
     "/password-generator/assets/i18n/en.json": "b3f8b0065169f71f5b712860fdacb7137e6266a3",
     "/password-generator/assets/i18n/es.json": "147d9e442e41716d10b1811b62a320495629f3aa",
+    "/password-generator/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/password-generator/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/password-generator/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/password-generator/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/password-generator/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/password-generator/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/password-generator/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/password-generator/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/password-generator/assets/icons/icon.svg": "1357939e352a4d7fe01ee4e3ed69bf8f9834ad5c",
     "/password-generator/assets/images/Eclipse-1s-200px.svg": "1db1785a1c0168fb9d45733d84120d8dba74d96f",
     "/password-generator/assets/images/error-icon.svg": "089224affe0d3fe473836ceee1eeb6c91a29542a",
@@ -54,12 +70,12 @@
     "/password-generator/assets/images/right-arrow-svgrepo-com (2).svg": "af7cce548d7fea0fa179b8d1968d395447e44af0",
     "/password-generator/assets/images/success-icon.svg": "10148b28be4558675c42493b7ac98c956a717f63",
     "/password-generator/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/password-generator/index.html": "becaaa33bf41f67b89a2e64a05e4a65d74206146",
-    "/password-generator/main.9ec3ab124aa3ddff.js": "68248feb26bb96426f1249c2d960a549148eb7b8",
-    "/password-generator/manifest.webmanifest": "ab137d1cc48d8203e774ed0f877f4b5569f62c4b",
+    "/password-generator/index.html": "4b6090c6fab1ca20e2b108a3fd10a8f04b17539d",
+    "/password-generator/main.d77f72e01bfb8c84.js": "b0438f38461a319c10df53d88b1bbcc6f8913346",
+    "/password-generator/manifest.webmanifest": "8a77daf14692b904c2c4bab0efe0d17c4a90863b",
     "/password-generator/polyfills.d4e8a511f0735905.js": "ec892daa12001b7a5e1b25bf37702cc68827432a",
     "/password-generator/runtime.655e0ec6227aa74f.js": "17d8a33427caeae354d4fe8c8091a822ceddf204",
-    "/password-generator/styles.983c6acf02800636.css": "841ebb8619c31ee5e19bf0565a2cf84eb8108a56"
+    "/password-generator/styles.00f13326c31a8f8a.css": "9d28dad4527880768489897a96baa9bf81142d89"
   },
   "navigationUrls": [
     {
